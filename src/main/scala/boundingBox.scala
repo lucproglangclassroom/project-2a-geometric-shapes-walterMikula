@@ -24,10 +24,14 @@ object boundingBox:
 
     case Group(children*) =>
       val boxes = children.map(apply)
-      val minX = boxes.map { case Location(x, _, Rectangle(w, _)) => x }.min
-      val maxX = boxes.map { case Location(x, _, Rectangle(w, _)) => x + w }.max
-      val minY = boxes.map { case Location(_, y, Rectangle(_, h)) => y }.min
-      val maxY = boxes.map { case Location(_, y, Rectangle(_, h)) => y + h }.max
+      val minX = boxes.map { 
+        case Location(x, _, Rectangle(w, _)) => x }.min
+      val maxX = boxes.map { 
+        case Location(x, _, Rectangle(w, _)) => x + w }.max
+      val minY = boxes.map { 
+        case Location(_, y, Rectangle(_, h)) => y }.min
+      val maxY = boxes.map { 
+        case Location(_, y, Rectangle(_, h)) => y + h }.max
       Location(minX, minY, Rectangle(maxX - minX, maxY - minY))
 
 end boundingBox
