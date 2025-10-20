@@ -11,7 +11,7 @@ object boundingBox:
       Location(0, 0, Rectangle(w, h))
     
     case Ellipse(rx, ry) =>
-      // ellipse centered at (0,0): bbox from (-rx,-ry) size (2rx, 2ry)
+      // ellipse should be centered at orign boundign box needs to be (-rx,-ry) size (2rx, 2ry)
       Location(-rx, -ry, Rectangle(2 * rx, 2 * ry))
 
     case Location(x, y, inner) =>
